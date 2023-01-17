@@ -5,3 +5,4 @@
 print("Brian Mohabeer")
 print("128 Coolridge Avenue, Jacksonville NJ 08830")
 print("808-297-9704")
+print("Computer Science Major")

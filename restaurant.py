@@ -8,7 +8,7 @@ while keep_going == "yes":
     vegetarian = False
     vegan = False
     gluten_free = False
-    response1 = input("Is anyone in your party a vegentarian?: ")
+    response1 = input("Is anyone in your party a vegetarian?: ")
     response2 = input("Is anyone in your party a vegan?: ")
     response3 = input("Is anyone in your party gluten free?: ")
     if response1 == "yes":

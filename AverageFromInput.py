@@ -3,29 +3,40 @@
 #AverageFromInput
 
 def main():
-    # Open the numbers.txt file for reading.
-    numbers_file = open('numbers.txt', 'r')
-    # Assign variables for loop
-    total = 0
-    x = 0
-    # Read all the lines from the file.
-    for line in numbers_file:
-        # Assign variables
-        number = float(line)
-        total = total + number
-        x = x + 1
-        # Format and display the amount.
-        print(f'I read in {x} numbers(s) Current number is: {number:.2f}    Total is: {total:.2f}')
+    try:
+        numbers_file = open('numbers.txt', 'r')
+        total = 0
+        x = 0
+        for line in numbers_file:
+            number = float(line)
+            total = total + number
+            x = x + 1
+            output_lines(x, number, total)
+     
 
-    # Calculate average
+        average = get_average(total, x)
+        output_average(average)
+           
+        numbers_file.close()
+
+    except IOError:
+        print("Error: Can't find file")
+    except ValueError:
+        print("Error: Invalid value")
+    
+
+def get_average(total, x):
     average = total/x
+    return average
+
+def output_average(average):
     print(f'Average: {average:.2f}')
 
-        
-    # Close the file.
-    numbers_file.close()
+def output_lines(x, number, total):
+    print(f'I read in {x} numbers(s) Current number is: {number:.2f}  \t  Total is: {total:.2f}')
+    
 
-# Call the main function.
+
 if __name__ == '__main__':
     main()
 
